@@ -9,7 +9,6 @@
 import UIKit
 
 open class CollectionViewController: UIViewController {
-
     @IBOutlet open weak var collectionView: CollectionView!
     
     // MARK: - init
@@ -53,12 +52,11 @@ open class CollectionViewController: UIViewController {
             ]
         }
     }
-
+    
     // MARK: - view controller
     
     open override func loadView() {
         super.loadView()
-        
         let collectionView = CollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView = collectionView
@@ -69,11 +67,9 @@ open class CollectionViewController: UIViewController {
      open override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.view.backgroundColor = .white
-
         self.collectionView.backgroundColor = .clear
         self.collectionView.alwaysBounceVertical = true
-        self.collectionView.showsVerticalScrollIndicator = true
+        self.collectionView.showsVerticalScrollIndicator = false
     }
 
     open override func didReceiveMemoryWarning() {

@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UIView {
-    
     var id: String? {
         get {
             return self.accessibilityIdentifier
@@ -33,14 +32,12 @@ extension UIView {
 }
 
 extension Array {
-    
     func element(at index: Int) -> Element? {
         return index < self.count && index >= 0 ? self[index] : nil
     }
 }
 
 extension CGFloat {
-    
     var evenRounded: CGFloat {
         guard self > 1 else {
             return self
@@ -54,7 +51,6 @@ extension CGFloat {
 }
 
 extension UICollectionViewCell {
-    
     static var uniqueIdentifier: String {
         return String(describing: self)
     }
@@ -72,7 +68,6 @@ extension UICollectionViewCell {
     }
     
     // MARK: - cells
-    
     static func register(nibFor collectionView: UICollectionView) {
         collectionView.register(self.nib, forCellWithReuseIdentifier: self.uniqueIdentifier)
     }
@@ -93,7 +88,6 @@ extension UICollectionViewCell {
     }
     
     // MARK: - supplementary views
-    
     static func register(nibFor collectionView: UICollectionView, kind: String) {
         collectionView.register(self.nib, forSupplementaryViewOfKind: kind, withReuseIdentifier: self.uniqueIdentifier)
     }

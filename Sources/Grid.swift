@@ -9,7 +9,6 @@
 import UIKit
 
 public extension UIEdgeInsets {
-
     init(all value: CGFloat) {
         self.init(top: value, left: value, bottom: value, right: value)
     }
@@ -20,7 +19,6 @@ public extension UIEdgeInsets {
 }
 
 open class Grid {
-    
     open var columns: CGFloat
     open var margin: UIEdgeInsets
     open var padding: UIEdgeInsets

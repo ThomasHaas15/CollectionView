@@ -9,7 +9,6 @@
 import UIKit
 
 open class Section {
-    
     public var grid: Grid?
     public var header: ViewModelProtocol?
     public var footer: ViewModelProtocol?
@@ -26,7 +25,6 @@ open class Section {
     }
 
     // MARK: - helpers
-
     public func add(_ item: ViewModelProtocol) {
         self.items.append(item)
     }

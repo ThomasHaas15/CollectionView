@@ -9,7 +9,6 @@
 import UIKit
 
 open class Source: NSObject {
-    
     private var indexPathSelected = false
     
     open var grid: Grid
@@ -30,7 +29,6 @@ open class Source: NSObject {
     }
 
     // MARK: - helpers
-    
     public func add(_ section: Section) {
         self.sections.append(section)
     }
@@ -45,7 +43,6 @@ open class Source: NSObject {
     }
 
     // MARK: - section indexes
-    
     public var sectionIndexes: IndexSet? {
         if self.sections.isEmpty {
             return nil
@@ -57,7 +54,6 @@ open class Source: NSObject {
     }
     
     // MARK: - item helpers
-    
     public func itemAt(_ section: Int) -> Section? {
         return self.sections.element(at: section)
     }
@@ -67,7 +63,6 @@ open class Source: NSObject {
     }
 
     // MARK: - view registration
-    
     public func register(itemsFor collectionView: UICollectionView) {
 
         for section in self.sections {
@@ -82,7 +77,6 @@ open class Source: NSObject {
 }
 
 extension Source: UICollectionViewDataSource {
-    
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.sections.count
     }
@@ -144,7 +138,6 @@ extension Source: UICollectionViewDataSource {
 }
 
 extension Source: UICollectionViewDelegate {
-    
     func selectItem(at indexPath: IndexPath) {
         guard !self.indexPathSelected else {
             return
@@ -159,7 +152,6 @@ extension Source: UICollectionViewDelegate {
 }
 
 extension Source: UICollectionViewDelegateFlowLayout {
-    
     func grid(_ section: Int) -> Grid {
         return self.itemAt(section)?.grid ?? self.grid
     }

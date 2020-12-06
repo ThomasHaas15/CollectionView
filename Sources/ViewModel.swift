@@ -9,7 +9,6 @@
 import UIKit
 
 public protocol ViewModelProtocol {
-
     var id: String { get }
     var cell: Cell.Type { get }
     
@@ -19,9 +18,8 @@ public protocol ViewModelProtocol {
 }
 
 open class ViewModel<View, Model>: ViewModelProtocol where View: Cell, Model: Any {
-
     public typealias ViewModelHandler = ((ViewModel<View, Model>) -> Void)
-
+    
     public var explicitId: String?
     public var model: Model
     public var cell: Cell.Type { return View.self }
@@ -45,7 +43,6 @@ open class ViewModel<View, Model>: ViewModelProtocol where View: Cell, Model: An
     }
 
     // MARK: - init
-
     public init(id explicitId: String? = nil, _ data: Model) {
         self.explicitId = explicitId
         self.model = data
@@ -57,7 +54,6 @@ open class ViewModel<View, Model>: ViewModelProtocol where View: Cell, Model: An
     }
     
     // MARK: - CollectionViewViewModelProtocol
-    
     public func config(cell: Cell, collectionView: CollectionView, indexPath: IndexPath, grid: Grid) {
         self.collectionView = collectionView
         self.indexPath = indexPath
@@ -76,7 +72,6 @@ open class ViewModel<View, Model>: ViewModelProtocol where View: Cell, Model: An
     }
     
     // MARK: - API methods
-    
     open func updateView() {
         
     }
