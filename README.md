@@ -8,7 +8,7 @@ CollectionViews with ease!
 ### Swift Package Manager
 
 ```
-.package(url: "https://github.com/CoreKit/CollectionView", from: "2.0.0"),
+.package(url: "https://github.com/ThomasHaas15/CollectionView", from: "2.0.0"),
 ```
 
 ## License
