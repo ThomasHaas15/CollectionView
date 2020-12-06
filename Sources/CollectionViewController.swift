@@ -37,12 +37,21 @@ open class CollectionViewController: UIViewController {
     }
     
     open func layoutConstraints() -> [NSLayoutConstraint] {
-        return [
-            self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            self.collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-        ]
+        if #available(iOS 11.0, *) {
+            return [
+                self.collectionView.topAnchor.constraint(equalTo: self.view.centerYAnchor),
+                self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                self.collectionView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+                self.collectionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            ]
+        } else {
+            return [
+                self.collectionView.topAnchor.constraint(equalTo: self.view.centerYAnchor),
+                self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                self.collectionView.leadingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leadingAnchor),
+                self.collectionView.trailingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.trailingAnchor),
+            ]
+        }
     }
 
     // MARK: - view controller
